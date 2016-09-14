@@ -1,8 +1,8 @@
-## Notes on this fork
+## About this fork
 
-All I've added on this fork is a config parameter that lets you specify a regex string denoting the Content-Types that you would like to add the Content-Encoding 'gzip' to.
+On this fork, I've added a config parameter that lets you specify a regex string denoting ```Content-Type```s that you have gzipped. The module then sets the ```Content-Encoding``` metadata on those files to ```gzip``` for you.
 
-To be clear: The changes I made DO NOT gzip any files. It merely adds a way to automate adding the Content-Encoding metadata to files that have already been gzipped.
+To be clear: The changes I made DO NOT gzip any files. It merely adds a way to automate adding the ```Content-Encoding``` metadata to files that have already been gzipped.
 
 In my case, I used the [metalsmith-gzip](https://github.com/ludovicofischer/metalsmith-gzip) module as part of my [Metalsmith](http://metalsmith.io/) pipeline when generating [my static site](https://github.com/bhirsch42/dime).
 
