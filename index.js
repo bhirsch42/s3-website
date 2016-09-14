@@ -19,6 +19,8 @@ var defaultConfig = {
   uploadDir: '.'
 }
 
+console.log("npm test 2")
+
 var defaultBucketConfig = {
   Bucket: '' /* required */
 }
