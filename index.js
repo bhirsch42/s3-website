@@ -19,8 +19,6 @@ var defaultConfig = {
   uploadDir: '.'
 }
 
-console.log("npm test 3")
-
 var defaultBucketConfig = {
   Bucket: '' /* required */
 }
@@ -300,6 +298,13 @@ function uploadFile (s3, config, file, cb) {
     Key: file,
     Body: fs.createReadStream(path.join(config.uploadDir, file)),
     ContentType: mime.lookup(file)
+  }
+
+  if (config.gzipTypes) {
+    var gzipTypes = new RegExp(config.gzipTypes);
+    if (gzipTypes.exec(mime.lookup(file))) {
+      params['ContentEncoding'] = 'gzip'
+    }
   }
 
   logUpdate('Uploading: ' + file)

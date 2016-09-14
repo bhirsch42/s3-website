@@ -1,3 +1,11 @@
+## Notes on this fork
+
+All I've added on this fork is a config parameter that lets you specify a regex string denoting the Content-Types that you would like to add the Content-Encoding 'gzip' to.
+
+To be clear: The changes I made DO NOT gzip any files. It merely adds a way to automate adding the Content-Encoding metadata to files that have already been gzipped.
+
+In my case, I used the [metalsmith-gzip](https://github.com/ludovicofischer/metalsmith-gzip) module as part of my [Metalsmith](http://metalsmith.io/) pipeline when generating [my static site](https://github.com/bhirsch42/dime).
+
 ## s3-website
 
 Easily publish static websites to Amazon S3. TLS encryption can be enabled via Cloudfront.
